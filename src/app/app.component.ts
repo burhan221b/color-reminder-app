@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'color-reminder-app';
+  title = 'Angular 2+ Color Coded Reminder App';
 }
