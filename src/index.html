@@ -11,18 +11,20 @@
 </head>
 
 <body>
-  <app-root>
-    <div class="lds-roller">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </app-root>
+  <app-root></app-root>
+  <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA0gp1lWUVss0puTKdINc5sJ8zdrCYzvgg",
+      authDomain: "angular-colornote.firebaseapp.com",
+      databaseURL: "https://angular-colornote.firebaseio.com",
+      projectId: "angular-colornote",
+      storageBucket: "angular-colornote.appspot.com",
+      messagingSenderId: "1037670529325"
+    };
+    firebase.initializeApp(config);
+  </script>
 </body>
 
 </html>

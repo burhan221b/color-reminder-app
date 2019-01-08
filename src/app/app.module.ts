@@ -7,12 +7,14 @@ import { DirectoryComponent } from './directory/directory.component';
 import { FilterPipe } from './filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LoadingSpinnerComponent } from './ui/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DirectoryComponent,
-    FilterPipe
+    FilterPipe,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,

@@ -6,7 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
   // test
-  private _url = 'assets/notes.json';
+  // private _url = 'assets/notes.json';
+  private _url = 'https://angular-colornote.firebaseio.com/';
 
   constructor(private http: HttpClient) { }
 

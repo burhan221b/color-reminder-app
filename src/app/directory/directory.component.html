@@ -6,6 +6,8 @@
   <input type="text" id="term" [(ngModel)]="term" [ngModelOptions]="{standalone: true}">
 </form>
 
+<!-- Spinner -->
+<app-loading-spinner id="spin-center" *ngIf="showSpinner"></app-loading-spinner>
 <!-- Single Note Container -->
 <ul id="note-listing">
   <li *ngFor="let note of notes | filter:term">
@@ -15,8 +17,16 @@
 
       <!-- Note Item -->
       <h3>{{note.item}}</h3>
+
+      <!-- Delete Note -->
+      <div (click)="fbDeleteData(note)">X</div>
     </div>
   </li>
 </ul>
 
 <!-- Form to POST new notes and color id -->
+<form action="" id="add-note">
+  <input type="text" [(ngModel)]="item" [ngModelOptions]="{standalone: true}">
+  <input type="text" [(ngModel)]="color" [ngModelOptions]="{standalone: true}">
+  <button (click)="fbPostData(item, color)">Add Note</button>
+</form>
