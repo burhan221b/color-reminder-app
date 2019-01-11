@@ -15,8 +15,12 @@ declare var firebase: any;
 export class DirectoryComponent implements OnInit {
   // Notes - area for placing lists of note
   notes: any = [];
+  color: any = undefined;
+  item: any = undefined;
   bool = null;
   showSpinner = true;
+  errorhandle = false;
+
   // set up service in component. Make it private for component use.
   constructor(private dataService: DataService) { }
 
@@ -24,6 +28,7 @@ export class DirectoryComponent implements OnInit {
     // This will retreive data from database
     // this.dataService.fetchData().subscribe(data => this.notes = data);
     this.fbGetData();
+    this.errorhandle = false;
   }
 
   // To generate random id numbers for data
@@ -41,7 +46,15 @@ export class DirectoryComponent implements OnInit {
   }
 
   fbPostData(item, color) {
+    if (item === undefined || color === undefined) {
+      this.errorhandle = true;
+      throw new Error('Can not be blank');
+    }
     firebase.database().ref('/').push({ item: item, color: color, id: this.genID(10) });
+    this.item = undefined;
+    this.color = undefined;
+    this.errorhandle = false;
+
   }
 
   // Delete Item
