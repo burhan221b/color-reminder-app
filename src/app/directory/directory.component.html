@@ -1,14 +1,14 @@
 <h2>Notes and Reminders</h2>
 <!-- *ngIf="!showSpinner"  -->
 <!-- Form For Searching  -->
-<form id="filter">
+<form *ngIf="!showSpinner" id="filter">
   <label for="term">Look for Note by Keywords or Color</label>
   <input type="text" id="term" [(ngModel)]="term" [ngModelOptions]="{standalone: true}">
 </form>
 
 <!-- Spinner -->
-<!-- <h3 *ngIf="showSpinner">Accessing Your Notes...</h3> -->
-<!-- <app-loading-spinner id="spin-center" *ngIf="showSpinner"></app-loading-spinner> -->
+<h3 *ngIf="showSpinner">Accessing Your Notes...</h3>
+<app-loading-spinner id="spin-center" *ngIf="showSpinner"></app-loading-spinner>
 <!-- Single Note Container -->
 <ul id="note-listing">
   <li *ngFor="let note of notes | filter:term">
@@ -26,7 +26,7 @@
 </ul>
 
 <!-- Form to POST new notes and color id -->
-<form action="" id="add-note">
+<form *ngIf="!showSpinner" action="" id="add-note">
 
   <input type="text" id='noteinput' #noteinput [(ngModel)]="item" [ngModelOptions]="{standalone: true}">
   <!-- <select id='colorinput' #colorinput [(ngModel)]="color" [ngModelOptions]="{standalone: true}" [value]="undefined">

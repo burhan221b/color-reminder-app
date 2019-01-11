@@ -18,7 +18,8 @@ export class DirectoryComponent implements OnInit {
   color: any = undefined;
   item: any = undefined;
   bool = null;
-  showSpinner = true;
+  // showSpinner = true;
+  showSpinner = false;
   errorhandle = false;
 
   // set up service in component. Make it private for component use.
@@ -40,8 +41,23 @@ export class DirectoryComponent implements OnInit {
   fbGetData() {
     firebase.database().ref('/').on('child_added', (snapshot) => {
       // if data is has been retrieved, turn spinner off
+      //
+      // firebase.database().child("/").once('value', function (snapshot) {
+      //   if (snapshot.exists()) {
+      //     alert('exists');
+      //   }
+      // });
+      //
+
+      // if (this.isEmpty(snapshot)) {
+      //   this.showSpinner = false;
+      //   return console.log('nothing here');
+      // } else {
+
+      console.log(snapshot);
       this.showSpinner = false;
       this.notes.push(snapshot.val());
+      // }
     });
   }
 
@@ -74,4 +90,12 @@ export class DirectoryComponent implements OnInit {
     firebase.database().ref('/' + idkey).remove();
   }
 
+  // isEmpty(obj) {
+  //   for (let key in obj) {
+  //     if (obj.hasOwnProperty(key)) {
+  //       return false;
+  //     }
+  //   }
+  //   return true;
+  // }
 }
