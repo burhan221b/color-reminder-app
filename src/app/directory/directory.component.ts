@@ -14,12 +14,13 @@ declare var firebase: any;
 })
 export class DirectoryComponent implements OnInit {
   // Notes - area for placing lists of note
+  term: any;
   notes: any = [];
   color: any = undefined;
   item: any = undefined;
   bool = null;
-  // showSpinner = true;
-  showSpinner = false;
+  showSpinner = true;
+  // showSpinner = false;
   errorhandle = false;
 
   // set up service in component. Make it private for component use.
@@ -53,6 +54,7 @@ export class DirectoryComponent implements OnInit {
       //   this.showSpinner = false;
       //   return console.log('nothing here');
       // } else {
+
 
       console.log(snapshot);
       this.showSpinner = false;
