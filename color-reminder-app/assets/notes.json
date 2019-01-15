@@ -1,0 +1,22 @@
+[
+    {
+        "item": "First note",
+        "color": "red",
+        "id": "1"
+    },
+    {
+        "item": "Second note",
+        "color": "blue",
+        "id": "2"
+    },
+    {
+        "item": "Third note",
+        "color": "green",
+        "id": "3"
+    },
+    {
+        "item": "Fourth note",
+        "color": "yellow",
+        "id": "4"
+    }
+]
